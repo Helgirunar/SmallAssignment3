@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationBar from '../NavigationBar';
-import Bosses from '../Bosses/Bosses'
+import Bosses from '../Bosses/Bosses';
+import NewBossForm from '../Bosses/NewBossForm';
 
 class App extends React.Component {
     componentDidMount() {
@@ -15,6 +16,7 @@ class App extends React.Component {
         <div className="container">
         <NavigationBar />
         <Bosses />
+        <NewBossForm />
         </div>
         )
     }
