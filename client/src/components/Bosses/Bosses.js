@@ -1,13 +1,9 @@
 import React from 'react';
+import bossesService from '../../services/bossesServices';
 
-class Bosses extends React.Components {
+class Bosses extends React.Component{
   componentDidMount(){
-    fetch('http://localhost:4500/api/bosses').then(resp => {
-      if(resp.ok) { return resp.json();}
-    }).then(data => {
-      const bosses = data.results.map(d => { return {id: d.id, name: d.name, description: d.description, img: d.img} });
-      this.setState({bosses});
-    });
+    this.setState({bosses: bossesService.getBosses()});
   }
   constructor(props) {
     super(props);
@@ -26,4 +22,4 @@ class Bosses extends React.Components {
   }
 }
 
-export default bosses;
+export default Bosses;
